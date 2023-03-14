@@ -1,5 +1,6 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from App.database import db
 
 class CETLAdmin (db.Model):
     CETLAdminID = db.Column(db.Integer, primary_key=True)

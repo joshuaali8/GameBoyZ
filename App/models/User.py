@@ -18,7 +18,7 @@ class User(db.Model):
     def toJSON(self):
         return{
             'userId': self.userId,
-            'firstname': self.firstname
+            'firstname': self.firstname,
             'lastname': self.lastname
         }
 

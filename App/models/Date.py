@@ -1,5 +1,6 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from App.database import db
 
 class Date(db.Model):
     Day = db.Column(db.Integer)
@@ -7,18 +8,18 @@ class Date(db.Model):
     Year= db.Column(db.Integer)
     Time= db.Column(db.Integer)
 
-    def __init__(self , Day, Month, Year, Time)
-        self.Day =(Day)
-        self.Month = (Month)
-        self.Year = (Year)
-        self.Time =(Time)
-        
- def toJSON(self):
+    def __init__(self , Day, Month, Year, Time):
+            self.Day =(Day)
+            self.Month = (Month)
+            self.Year = (Year)
+            self.Time =(Time)
+            
+    def toJSON(self):
         return{
-            ' Day': self.Day
-            'Month': self.Month
-            'Year'= self.Year
-            'Time'=  self.Time
+            'Day': self.Day,
+            'Month': self.Month,
+            'Year': self.Year,
+            'Time': self.Time
             
             
         }

@@ -1,5 +1,6 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from App.database import db
 
 
 class Course (db.Model):
@@ -9,12 +10,12 @@ class Course (db.Model):
     programmeID = db.Column(db.Integer, forgein_key= True)
     departmentID = db.Column(db.Integer, forgein_key=True)
 
-    def __init__(self , courseCode, courseTitle, facultyID , programmeID , departmentID)
-            self.courseCode =(courseCode)
-            self.courseTitle = (courseTitle)
-            self.facultyID = (facultyID)
-            self.programmeID =(programmeID)
-            self.departmentID =(departmentID)
+    def __init__(self , courseCode, courseTitle, facultyID , programmeID , departmentID):
+        self.courseCode = (courseCode)
+        self.courseTitle = (courseTitle)
+        self.facultyID = (facultyID)
+        self.programmeID =(programmeID)
+        self.departmentID =(departmentID)
 
     def toJSON(self):
             return{
