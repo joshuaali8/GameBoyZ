@@ -19,11 +19,11 @@ class CETLUserQueue(db.Model):
 
  def toJSON(self):
         return{
-            'CETLUserQ': self.CETLUserQ
-            'CETLUserID': self.CETLUserID
-            'numofCourses'= self.numofCourses
-            'positionInUserQueue'= self.positionInUserQueue
-            'changes'= self.changes
-            'approveCourses'= self.approveCourses
+            'CETLUserQ': self.CETLUserQ,
+            'CETLUserID': self.CETLUserID,
+            'numofCourses': self.numofCourses,
+            'positionInUserQueue': self.positionInUserQueue,
+            'changes': self.changes,
+            'approveCourses': self.approveCourses
         }
 
