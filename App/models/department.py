@@ -5,8 +5,8 @@ from App.database import db
 class Department(db.Model):
     departmentID = db.Column(db.Integer, primary_key=True)
     departmentName = db.Column(db.String(200))
-    facultyID = db.Column(db.Integer, forgein_key= True)
-    programmeID = db.Column(db.Integer, forgein_key = True)
+    facultyID = db.Column(db.Integer, db.ForeignKey('Faculty.facultyID'))
+    programmeID = db.Column(db.Integer, db.ForeignKey('Programme.programmeID'))
     
     def __init__(self , departmentID, departmentName, facultyID, programmeID):
             self.departmentID =(departmentID)

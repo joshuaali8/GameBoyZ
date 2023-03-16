@@ -5,8 +5,8 @@ from App.database import db
 class Message(db.Model):
     messageID = db.Column(db.Integer, primary_key=True)
     text= db.Column(db.String(120))
-    Date= db.Column(db.DateTime)
-    Sender= db.Column(db.user)
+    #Date= db.Column(db.DateTime)
+    #Sender= db.Column(db.User)
 
     def __init__(self , messageID, text, Date, Sender):
             self.messageID =(messageID)

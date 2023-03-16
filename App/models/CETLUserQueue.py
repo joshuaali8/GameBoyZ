@@ -4,7 +4,7 @@ from App.database import db
 
 class CETLUserQueue(db.Model):
     CETLUserQ = db.Column(db.Integer, primary_key=True)
-    CETLUserID = db.Column(db.Integer, forgein_key=True)
+    CETLUserID = db.Column(db.Integer, db.ForeignKey('CETLUser.CETLUserID'))
     numofCourses = db.Column(db.Integer)
     positionInUserQueue = db.Column(db.Integer)
     changes = db.Column(db.Enum)

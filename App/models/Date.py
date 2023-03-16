@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from App.database import db
 
 class Date(db.Model):
+    DateID = db.Column(db.Integer, primary_key=True)
     Day = db.Column(db.Integer)
     Month= db.Column(db.Integer)
     Year= db.Column(db.Integer)

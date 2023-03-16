@@ -4,7 +4,7 @@ from App.database import db
 
 class Queue(db.Model):
     queueID = db.Column(db.Integer, primary_key=True)
-    documentID = db.Column(db.Integer, forgein_key= True)
+    documentID = db.Column(db.Integer, db.ForeignKey('Document.documentID'))
     position = db.Column(db.Integer)
     dateSubmitted= db.Column(db.DateTime)
     estimatedResponseTime =db.Column(db.Integer)

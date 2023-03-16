@@ -2,10 +2,10 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from App.database import db
 
-class Resoruce(db.Model):
+class Resource(db.Model):
     resourceID = db.Column(db.Integer, primary_key=True)
     resourceTag= db.Column(db.String(20))
-    resourcesDate=db.Column(db.Blob)
+    #resourcesDate=db.Column(db.Blob)
     resourceName= db.Column(db.String(100))
 
     def __init__(self , resourceID, resourceTag, resourcesDate, resourceName):

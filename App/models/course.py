@@ -6,9 +6,9 @@ from App.database import db
 class Course (db.Model):
     courseCode = db.Column(db.Integer, primary_key=True)
     courseTitle= db.Column(db.String(120))
-    facultyID = db.Column(db.Integer , forgein_key=True)
-    programmeID = db.Column(db.Integer, forgein_key= True)
-    departmentID = db.Column(db.Integer, forgein_key=True)
+    facultyID = db.Column(db.Integer , db.ForeignKey('Faculty.facultyID'))
+    programmeID = db.Column(db.Integer, db.ForeignKey('Programme.programmeID'))
+    departmentID = db.Column(db.Integer, db.ForeignKey('Department.departmentID'))
 
     def __init__(self , courseCode, courseTitle, facultyID , programmeID , departmentID):
         self.courseCode = (courseCode)

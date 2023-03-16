@@ -5,7 +5,7 @@ from App.database import db
 
 class Document(db.Model):
     documentID = db.Column(db.Integer, primary_key=True)
-    resourceID= db.Column(db.Integer, forgein_key=True)
+    resourceID= db.Column(db.Integer, db.ForeignKey('Resource.resourceID'))
     queueID= db.Column(db.Integer)
     lecturerID= db.Column(db.Integer)
     CETLUserID= db.Column(db.Integer)
