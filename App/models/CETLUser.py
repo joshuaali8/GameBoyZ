@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from App.database import db
 
 class CETLUser(db.Model):
-    CETLUserID = db.Column(db.Integer, primary_key=True)
+    CETLUserID= db.Column(db.Integer, primary_key=True)
 
 
     def __init__(self , CETLUserID):
