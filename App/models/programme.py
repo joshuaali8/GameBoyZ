@@ -5,7 +5,7 @@ from App.database import db
 class Programme(db.Model):
    programmeID = db.Column(db.Integer, primary_key=True)
    programmeName = db.Column(db.String(200))
-   departmentID = db.Column(db.Integer, forgein_key=True)
+   departmentID = db.Column(db.Integer, db.ForeignKey('department.departmentID'))
    programmeLevel =db.Column(db.String(10))
 
    def __init__(self , facultyID, facultyName, departmentID, programmeLevel):
