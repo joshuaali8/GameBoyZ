@@ -5,7 +5,7 @@ from App.database import db
 class Faculty(db.Model):
     facultyID = db.Column(db.Integer, primary_key=True)
     facultyName = db.Column(db.String(200))
-    departmentID =db.Column(db.Integer, db.ForeignKey('Department.departmentID'))
+    departmentID =db.Column(db.Integer, db.ForeignKey('department.departmentID'))
 
     def __init__(self , facultyID, facultyName, departmentID):
             self.facultyID =(facultyID)

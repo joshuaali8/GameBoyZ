@@ -4,8 +4,8 @@ from App.database import db
 
 class submittedProposals(db.Model):
     submittedID = db.Column(db.Integer, primary_key=True)
-    lecturerID= db.Column(db.Integer, db.ForeignKey('Lecturer.lecturerID'))
-    documentID= db.Column(db.Integer, db.ForeignKey('Document.documentID'))
+    lecturerID= db.Column(db.Integer, db.ForeignKey('lecturer.lecturerID'))
+    documentID= db.Column(db.Integer, db.ForeignKey('document.documentID'))
     dateSubmitted= db.Column(db.DateTime)
     responseStatus= db.Column(db.Boolean)
     assignedCetl= db.Column(db.Boolean)

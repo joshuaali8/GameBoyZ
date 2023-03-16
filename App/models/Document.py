@@ -5,7 +5,7 @@ from App.database import db
 
 class Document(db.Model):
     documentID = db.Column(db.Integer, primary_key=True)
-    resourceID= db.Column(db.Integer, db.ForeignKey('Resource.resourceID'))
+    resourceID= db.Column(db.Integer, db.ForeignKey('resource.resourceID'))
     queueID= db.Column(db.Integer)
     lecturerID= db.Column(db.Integer)
     CETLUserID= db.Column(db.Integer)
@@ -15,7 +15,7 @@ class Document(db.Model):
     courseCode= db.Column(db.String(40))
     documentName= db.Column(db.String(120))
     documentType= db.Column(db.String(120))
-    State= db.Column(db.Enum)
+    State= db.Column(db.Enum('value1', 'value2'), name='my_enum_type')
     Level= db.Column(db.String)
     dueDate= db.Column(db.DateTime)
 
