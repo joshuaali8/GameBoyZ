@@ -7,7 +7,7 @@ class CETLUserQueue(db.Model):
     CETLUserID = db.Column(db.Integer, db.ForeignKey('cetl_user.CETLUserID'))
     numofCourses = db.Column(db.Integer)
     positionInUserQueue = db.Column(db.Integer)
-    changes = db.Column(db.Enum)
+    changes = db.Column(db.Enum('value1', 'value2', name='queue_enum'))
     approveCourses= db.Column(db.Boolean)
 
     def __init__(self , CETLUserQ, CETLUserID, numofCourses, positionInUserQueue, changes, approveCourses):

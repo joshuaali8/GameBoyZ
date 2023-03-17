@@ -15,7 +15,7 @@ class Document(db.Model):
     courseCode= db.Column(db.String(40))
     documentName= db.Column(db.String(120))
     documentType= db.Column(db.String(120))
-    State= db.Column(db.Enum('value1', 'value2'), name='my_enum_type')
+    State= db.Column(db.Enum('value1', 'value2', name='my_enum_type'))
     Level= db.Column(db.String)
     dueDate= db.Column(db.DateTime)
 
