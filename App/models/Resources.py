@@ -5,7 +5,7 @@ from App.database import db
 class Resource(db.Model):
     resourceID = db.Column(db.Integer, primary_key=True)
     resourceTag= db.Column(db.String(20))
-    resourceData = db.Column(db.Column(db.LargeBinary))
+    resourceData = db.Column(db.LargeBinary)
     resourceName= db.Column(db.String(100))
 
     def __init__(self , resourceID, resourceTag, resourceData, resourceName):
