@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from App.database import db
-from App.models.user import User
+from App.models.User import User
 
 
-class CETLUser(db.Model):
+class CETLUser(User):
     __tablename__ = 'cetl_user'
     __mapper_args__ = {
         'polymorphic_identity': 'cetluser',

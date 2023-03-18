@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from App.database import db
-from App.models.user import User
+from App.models.User import User
 
 #make user class abstract and reference into cetladmin
 class CETLAdmin (User):

@@ -10,13 +10,13 @@ class Queue(db.Model):
     estimatedResponseTime =db.Column(db.Integer)
     assignedCetl =db.Column(db.Boolean)
     
-    def __init__(self , queueID, documentID, position, dateSubmitted, estimatedResponseTime, assignedCetl):
-            self.queueID =(queueID)
-            self.documentID = (documentID)
-            self.position = (position)
-            self.dateSubmitted = (dateSubmitted)
-            self.estimatedResponseTime = (estimatedResponseTime)
-            self.assignedCetl = (assignedCetl)
+    def __init__(self , queueID, documentID, position, dateSubmitted, estimatedResponseTime, assignedCetl = False):
+            self.queueID = queueID
+            self.documentID = documentID
+            self.position = position
+            self.dateSubmitted = dateSubmitted
+            self.estimatedResponseTime = estimatedResponseTime
+            self.assignedCetl = assignedCetl
 
             
     def toJSON(self):

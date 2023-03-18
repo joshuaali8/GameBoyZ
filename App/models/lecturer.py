@@ -1,15 +1,28 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from App.database import db
+from App.models.User import User
 
-class Lecturer(db.Model):
+class Lecturer(User):
+    __tablename__ = 'lecturer'
+    __mapper_args__ = {
+        'polymorphic_identity': 'lecturer',
+    }
+    
+    userId = db.Column(db.Integer, db.ForeignKey('user.userId'), primary_key=True)
     lecturerID = db.Column(db.Integer, primary_key=True)
 
-    def __init__(self , lecturerID):
-            self.lecturerID =(lecturerID)
+    # add unique constraint to userId
+    __table_args__ = (
+        db.UniqueConstraint('userId'),
+    )
+
+    def __init__(self, firstname, lastname, password, lecturerID):
+            super().__init__(firstname, lastname, password, roleID=3)
+            self.lecturerID = lecturerID
             
             
     def toJSON(self):
-            return{
-                'lecturerID': self.lecturerID          
-            }
+            data = super().toJSON()
+            data['lecturerID'] = self.lecturerID
+            return data

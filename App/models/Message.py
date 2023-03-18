@@ -5,21 +5,23 @@ from App.database import db
 class Message(db.Model):
     messageID = db.Column(db.Integer, primary_key=True)
     text= db.Column(db.String(120))
-    #Date= db.Column(db.DateTime)
-    #Sender= db.Column(db.User)
+    date= db.Column(db.DateTime, default=datetime.utcnow())
+    senderID = db.Column(db.Integer, db.ForeignKey('user.userId'))
+    chatID = db.Column(db.Integer, db.ForeignKey('chat.ChatID'))
+    notifications = db.relationship('Notification', backref='message', lazy=True)
 
-    def __init__(self , messageID, text, Date, Sender):
-            self.messageID =(messageID)
-            self.text= (text)
-            self.Date = (Date)
-            self.Sender =(Sender)
-            
+    def __init__(self, text, senderID, chatID, date=datetime.utcnow()):
+        self.text = text
+        self.date = date
+        self.senderID = senderID
+        self.chatID = chatID
+
     def toJSON(self):
-            return{
-                'messageID':  self.messageID,
-                'text': self.text,
-                'Date': self.Date,
-                'Sender': self.Sender
-                
-                
-            }
+        return{
+            'messageID':  self.messageID,
+            'text': self.text,
+            'date': self.date.isoformat(),
+            'senderID': self.senderID,
+            'chatID': self.chatID,
+            'notifications': [notification.toJSON() for notification in self.notifications]
+        }
