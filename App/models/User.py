@@ -2,22 +2,26 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from App.database import db
 
 class User(db.Model):
-    UserId = db.Column(db.Integer, primary_key=True)
-    roleID =  db.Column(db.Integer)
+    __abstract__ = True
+
+    userId = db.Column(db.Integer, primary_key=True)
+    roleID =  db.Column(db.Integer, nullable = False)
     email =  db.Column(db.String(120))
     password = db.Column(db.String(120), nullable=False)
     firstname = db.Column(db.String(20))
     lastname = db.Column(db.String(20))
 
     
-    def __init__(self, firstname, lastname, password):
-        self.firstname(firstname)
-        self.lastname(lastname)
+    def __init__(self, firstname, lastname, password, roleID):
+        self.firstname = firstname
+        self.lastname = lastname
         self.set_password(password)
+        self.roleID = roleID
 
     def toJSON(self):
         return{
             'userId': self.userId,
+            'role_id': self.roleID,
             'firstname': self.firstname,
             'lastname': self.lastname
         }
