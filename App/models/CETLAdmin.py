@@ -20,7 +20,7 @@ class CETLAdmin (User):
     )
 
     def __init__(self, firstname, lastname, password, CETLAdminID):
-            super().__init__(firstname, lastname, password, role_id=1)
+            super().__init__(firstname, lastname, password, roleID=1)
             self.CETLAdminID = CETLAdminID
             #self.CETLAdminID= (CETLAdminID)
 

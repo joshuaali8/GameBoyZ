@@ -4,7 +4,7 @@ from App.database import db
 
 
 class Course(db.Model):
-    courseCode = db.Column(db.Integer, primary_key=True)
+    courseCode = db.Column(db.String(10), primary_key=True)
     courseTitle = db.Column(db.String(120))
     facultyID = db.Column(db.Integer, db.ForeignKey('faculty.facultyID'))
     programmeID = db.Column(db.Integer, db.ForeignKey('programme.programmeID'))

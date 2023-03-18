@@ -10,13 +10,13 @@ class CETLUserQueue(db.Model):
     changes = db.Column(db.Enum('value1', 'value2', name='queue_enum'))
     approveCourses= db.Column(db.Boolean)
 
-    def __init__(self , CETLUserQ, CETLUserID, numofCourses, positionInUserQueue, changes, approveCourses):
-            self.CETLUserQ = (CETLUserQ)
-            self.CETLUserID=(CETLUserID)
-            self.numofCourses= (numofCourses)
-            self.positionInUserQueue= (positionInUserQueue)
-            self.changes=(changes)
-            self.approveCourses=(approveCourses)
+    def __init__(self , CETLUserQ, CETLUserID):
+            self.CETLUserQ = CETLUserQ
+            self.CETLUserID= CETLUserID
+            #self.numofCourses= numofCourses
+            #self.positionInUserQueue = positionInUserQueue
+            #self.changes=(changes)
+            #self.approveCourses=(approveCourses)
 
     def toJSON(self):
             return{
