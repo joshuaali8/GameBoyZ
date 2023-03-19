@@ -13,6 +13,7 @@ class Document(db.Model):
     facultyName= db.Column(db.String)
     programmeName= db.Column(db.String)
     courseCode= db.Column(db.String(10), db.ForeignKey('course.courseCode'))
+    courseTitle = db.Column(db.String(120))
     documentName= db.Column(db.String(120))
     documentType= db.Column(db.String(120))
     document = db.Column(db.LargeBinary)
