@@ -19,8 +19,8 @@ class CETLAdmin (User):
         db.UniqueConstraint('userId'),
     )
 
-    def __init__(self, firstname, lastname, password, CETLAdminID):
-            super().__init__(firstname, lastname, password, roleID=1)
+    def __init__(self, firstname, lastname,email, password, CETLAdminID):
+            super().__init__(firstname, lastname,email, password, roleID=1)
             self.CETLAdminID = CETLAdminID
             #self.CETLAdminID= (CETLAdminID)
 

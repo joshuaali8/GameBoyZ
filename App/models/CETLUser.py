@@ -18,8 +18,8 @@ class CETLUser(User):
         db.UniqueConstraint('userId'),
     )
 
-    def __init__(self, firstname, lastname, password, CETLUserID):
-            super().__init__(firstname, lastname, password, roleID=2)
+    def __init__(self, firstname, lastname,email, password, CETLUserID):
+            super().__init__(firstname, lastname, email, password, roleID=2)
             self.CETLUserID = CETLUserID
 
     def toJSON(self):
