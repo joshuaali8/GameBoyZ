@@ -3,23 +3,19 @@ from App.database import db
 
 
 def create_lecturer(lecturerID, firstname, lastname,email, password):
-    newlecturer = lecturer(lecturerID=lecturerID, firstname=firstname, lastname=lastname,email=email, password=password)
-    try:
-        db.session.add(newlecturer)
-        db.session.commit()
-        return newlecturer
+     # create new user
+    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=2)
+    db.session.add(newuser)
+    db.session.commit()
 
-        #if
+    # create new lecturer with userId of newly created user as foreign key
+    newlecturer = Lecturer(userId=newuser.userId, lecturerID=lecturerID)
+    db.session.add(newlecturer)
+    db.session.commit()
+    return newlecturer
 
- #def create_user(UserId, firstname, lastname,email,roleID, password):
-     #newuser = User(UserId=UserId, firstname=firstname, lastname=lastname,email=email, roleID= roleID, password=password)
 
-     #try:
-       # db.session.add(newuser)
-       # db.session.commit()
-        #return newuser
-
-    #elif
+    
     
     #def create_CETLUser(CETLUserID, firstname, lastname,email, password):
     #newCETLUser = CETLUser(CETLUserID=CETLUserID, firstname=firstname, lastname=lastname, email=email, password=password)
@@ -29,7 +25,7 @@ def create_lecturer(lecturerID, firstname, lastname,email, password):
         #db.session.commit()
         #return newCETLUser
 
-    #else
+
 
  #def create_CETLAdmin(CETLAdminID, firstname, lastname,email, password):
    # newCETLAdmin = CETLadmin(CETLAdminID=CETLAdminID, firstname=firstname, lastname=lastname, email=email, password=password)
