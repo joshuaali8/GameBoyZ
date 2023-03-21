@@ -15,20 +15,32 @@ def create_lecturer(lecturerID, firstname, lastname,email, password):
     return newlecturer
 
 
-    
-    
-    #def create_CETLUser(CETLUserID, firstname, lastname,email, password):
-    #newCETLUser = CETLUser(CETLUserID=CETLUserID, firstname=firstname, lastname=lastname, email=email, password=password)
-    # try:
-    
-        #db.session.add(newCETLUser)
-        #db.session.commit()
-        #return newCETLUser
+def create_CETLUser(CETLUserID, firstname, lastname,email, password):
+     # create new user
+    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=2)
+    db.session.add(newuser)
+    db.session.commit()
 
 
+    # create new cetluser with userId of newly created user as foreign key
+    newcetluser = cetluser(userId=newuser.userId, CETLUserID=newcetluser.CETLUserID)
+    db.session.add(newcetluser)
+    db.session.commit()
+    return newcetluser
 
- #def create_CETLAdmin(CETLAdminID, firstname, lastname,email, password):
-   # newCETLAdmin = CETLadmin(CETLAdminID=CETLAdminID, firstname=firstname, lastname=lastname, email=email, password=password)
+
+def create_CETLAdmin(CETLAdminID, firstname, lastname,email, password):
+    # create new user
+    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=2)
+    db.session.add(newuser)
+    db.session.commit()
+
+
+    # create new cetladmin with userId of newly created user as foreign key
+    newcetladmin = cetladmin(userId=newuser.userId, CETLAdminID= newcetladmin.CETLAdminID)
+    db.session.add(newcetladmin)
+    db.session.commit()
+    return newcetladmin
 
 #user
 def get_user_by_email(email):
