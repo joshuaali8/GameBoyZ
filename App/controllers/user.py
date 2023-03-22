@@ -86,7 +86,7 @@ def get_cetluser(CETLUserID):
 def get_all_cetluser():
     return CETLUser.query.all()
 
-def get_all_ccetluser_json():
+def get_all_cetluser_json():
     cetl_user= CETLUser.query.all()
     if not cetl_user:
         return []
@@ -110,7 +110,7 @@ def get_all_cetladmin_json():
    cetl_admin = [cetl_admin.toJSON() for cetl_admin in cetl_admin]
    return cetl_admin
 
-def update_user(userId, firstname, lastname, email, userId, roleID):
+def update_user(userId, firstname, lastname, email, roleID):
     user = get_user(userId)
     if user:
         user.firstname = firstname

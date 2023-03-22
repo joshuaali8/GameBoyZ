@@ -8,6 +8,7 @@ def create_submittedproposals(lecturerID, documentID, dateSubmitted, responseSta
     newproposal= submittedProposals(lecturerID= lecturerID, documentID=documentID, dateSubmitted=dateSubmitted, responseStatus= responseStatus, assignedCetl=assignedCetl)
     db.session.add(newproposal)
     db.session.commit()
+    return newproposal
 
 """--------------------------------------- """
 
@@ -23,6 +24,10 @@ def get_submittedproposal_by_lecturerID(lecturerID):
 
 def get_submittedproposal_by_CETLuser(CETLUserID):
     return submittedProposals.query.get(CETLUserID)
+
+
+def get_all_proposals():
+    return submittedProposals.query.all()
 
 """--------------------------------------"""
 
