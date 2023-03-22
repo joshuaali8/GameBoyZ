@@ -11,7 +11,8 @@ class Message(db.Model):
     chatID = db.Column(db.Integer, db.ForeignKey('chat.ChatID'))
     notifications = db.relationship('Notification', backref='message', lazy=True)
 
-    def __init__(self, text, senderID, chatID, date=datetime.utcnow()):
+    def __init__(self, messageID, text, senderID, chatID, date=datetime.utcnow()):
+        self.messageID= messageID
         self.text = text
         self.date = date
         self.senderID = senderID
