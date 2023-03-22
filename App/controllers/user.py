@@ -2,9 +2,9 @@ from App.models import User
 from App.database import db
 
 
-def create_lecturer(lecturerID, firstname, lastname,email, password):
+def create_lecturer(lecturerID, firstname, lastname, email, password):
      # create new user
-    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=2)
+    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=3)
     db.session.add(newuser)
     db.session.commit()
 
@@ -23,7 +23,7 @@ def create_CETLUser(CETLUserID, firstname, lastname,email, password):
 
 
     # create new cetluser with userId of newly created user as foreign key
-    newcetluser = cetluser(userId=newuser.userId, CETLUserID=newcetluser.CETLUserID)
+    newcetluser = CETLUser(userId=newuser.userId, CETLUserID = CETLUserID)
     db.session.add(newcetluser)
     db.session.commit()
     return newcetluser
@@ -31,13 +31,13 @@ def create_CETLUser(CETLUserID, firstname, lastname,email, password):
 
 def create_CETLAdmin(CETLAdminID, firstname, lastname,email, password):
     # create new user
-    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=2)
+    newuser = User(firstname=firstname, lastname=lastname, password=password, email=email, roleID=1)
     db.session.add(newuser)
     db.session.commit()
 
 
     # create new cetladmin with userId of newly created user as foreign key
-    newcetladmin = cetladmin(userId=newuser.userId, CETLAdminID= newcetladmin.CETLAdminID)
+    newcetladmin = CETLAdmin(userId=newuser.userId, CETLAdminID = CETLAdminID)
     db.session.add(newcetladmin)
     db.session.commit()
     return newcetladmin
@@ -105,18 +105,18 @@ def get_all_ccetladmin():
 
 def get_all_cetladmin_json():
    cetl_admin= CETLAdmin.query.all()
-    if not cetl_admin:
+   if not cetl_admin:
         return []
-    cetl_admin = [cetl_admin.toJSON() for cetl_admin in cetl_admin]
-    return cetl_admin
+   cetl_admin = [cetl_admin.toJSON() for cetl_admin in cetl_admin]
+   return cetl_admin
 
-def update_user(id, username):
-    user = get_user(UserId)
+def update_user(userId, firstname, lastname, email, userId, roleID):
+    user = get_user(userId)
     if user:
         user.firstname = firstname
         user.lastname = lastname
         user.email = email
-        user.UserId = userId
+        user.userId = userId
         user.roleID =  roleID
         db.session.add(user)
         return db.session.commit()

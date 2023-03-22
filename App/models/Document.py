@@ -5,8 +5,8 @@ from App.database import db
 
 class Document(db.Model):
     documentID = db.Column(db.Integer, primary_key=True)
-    resourceID= db.Column(db.Integer, db.ForeignKey('resources.resourceID'))
-    queueID= db.Column(db.Integer, db.ForeignKey('queue.queueID'))
+    resourceID = db.Column(db.Integer, db.ForeignKey('resources.resourceID'))
+    queueID = db.Column(db.Integer, db.ForeignKey('queue.queueID'))
     lecturerID= db.Column(db.Integer, db.ForeignKey('lecturer.lecturerID'))
     CETLUserID= db.Column(db.Integer, db.ForeignKey('cetl_user.CETLUserID'))
     facultyID= db.Column(db.Integer, db.ForeignKey('faculty.facultyID'))

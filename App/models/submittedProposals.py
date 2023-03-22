@@ -11,14 +11,14 @@ class submittedProposals(db.Model):
     assignedCetl= db.Column(db.Boolean)
     CETLUserID= db.Column(db.Integer)
 
-    def __init__(self , submittedID, lecturerID, documentID, dateSubmitted, responseStatus, assignedCetl, CETLUserID):
+    def __init__(self , submittedID, lecturerID, documentID, dateSubmitted, responseStatus, assignedCetl):
             self.submittedID =(submittedID)
             self.lecturerID = (lecturerID)
             self.documentID = (documentID)
             self.dateSubmitted = (dateSubmitted)
             self.responseStatus= (responseStatus)
             self.assignedCetl = (assignedCetl)
-            self.CETLUserID = (CETLUserID)
+            #self.CETLUserID = (CETLUserID)
             
             
     def toJSON(self):
