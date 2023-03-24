@@ -12,7 +12,7 @@ from .lecturer import *
 from .Message import *
 from .programme import *
 from .queue import *
-from .Resources import *
+from .Resource import *
 from .submittedProposals import *
 
 
