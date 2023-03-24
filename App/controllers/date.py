@@ -39,7 +39,6 @@ def get_all_proposals():
 def update_date(DateID= DateID, Day= Date , Month= Month, Year= Year, Time= Time):
     updateddates = get_date_byID(DateID)
     if updateddates:
-        updateddates.DateID= DateID
         updateddates.Day = Day
         updateddates.Month = Month
         updateddates.Year= Year

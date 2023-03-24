@@ -30,7 +30,6 @@ def get_all_proposals():
 def update_chat(ChatID, messages, users, chatTime=datetime.utcnow()):
     updatedchat = get_chat_byID(ChatID)
     if  updatedchat:
-         updatedchat.ChatID = ChatID
          updatedchat.messages = messages
          updatedchat.users = users
          updatedchat.chatTime=datetime.utcnow()

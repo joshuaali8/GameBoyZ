@@ -37,7 +37,6 @@ def get_all_proposals():
 def update_resources(resourceID, resourceTag, resourceData, resourceName):
     updatedresources = get_resources_byID(resourceID)
     if updatedresources:
-        updatedresources.resourceID= resourceID
         updatedresources.resourceTag = resourceTag
         updatedresources.resourceData = resourceData
         updatedresources.resourceName = resourceName

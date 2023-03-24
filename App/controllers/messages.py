@@ -34,7 +34,6 @@ def get_all_proposals():
 def update_message(messageID, text, senderID, chatID, date=datetime.utcnow()):
     updatedmessage = get_message_byID(messageID)
     if updatedmessage:
-        updatedmessage.messageID = messageID
         updatedmessage.text = text
         updatedmessage.senderID = senderID
         updatedmessage.chatID = chatID
