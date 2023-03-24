@@ -8,7 +8,7 @@ def create_resources(resourceID, resourceTag, resourceData, resourceName):
     newresources= newresources(resourceID= resourceID, resourceTag= resourceTag, resourceData= resourceData, resourceName= resourceName)
     db.session.add(newresources)
     db.session.commit()
-    return newproposal
+    return newresources
 
 """--------------------------------------- """
 
@@ -52,7 +52,7 @@ def update_resources(resourceID, resourceTag, resourceData, resourceName):
 """--------------------------------------- """
 
 def delete_resources(resourceID):
-    delresources = get_submittedproposal_byID(resourceID)
+    delresources = get_resources_byID(resourceID)
     if delresources:
         db.session.delete(delresources)
         return db.session.commit()

@@ -9,7 +9,8 @@ class Date(db.Model):
     Year= db.Column(db.Integer)
     Time= db.Column(db.Integer)
 
-    def __init__(self , Day, Month, Year, Time):
+    def __init__(self , DateID, Day, Month, Year, Time):
+            self.DateID= (DateID)
             self.Day =(Day)
             self.Month = (Month)
             self.Year = (Year)

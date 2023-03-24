@@ -1,5 +1,6 @@
 from App.models import *
 from App.database import db
+from datetime import datetime
  
 def create_message(messageID, text, senderID, chatID, date=datetime.utcnow()):
     newmessage= newmessage(text= text, senderID= senderID, chatID= chatID , date=datetime.utcnow())
