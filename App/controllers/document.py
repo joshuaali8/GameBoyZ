@@ -6,7 +6,7 @@ from App.database import db
 
 def create_document(documentID, resourceID, queueID, lecturerID, CETLUserID, facultyID, facultyName, programmeName, 
     courseCode, documentName, documentType, document, State, Level, dueDate):
-    newDocument = newDocument( documentID= documentID, resourceID= resourceID,queueID= queueID, lecturerID= lecturerID,CETLUserID= CETLUserID, facultyID= facultyID, 
+    newDocument = Document( documentID= documentID, resourceID= resourceID,queueID= queueID, lecturerID= lecturerID,CETLUserID= CETLUserID, facultyID= facultyID, 
     facultyName= facultyName, programmeName= programmeName, courseCode= courseCode,documentName= documentName, documentType= documentType, document= document, State= State, Level= Level, dueDate= dueDate)
     db.session.add(newDocument)
     db.session.commit()

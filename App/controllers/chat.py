@@ -3,7 +3,7 @@ from App.database import db
 from datetime import datetime
  
 def create_chat(ChatID, messages, users, chatTime=datetime.utcnow()):
-    newchat= newchat(ChatID=ChatID, messages= messages, users= users, chatTime=datetime.utcnow())
+    newchat= Chat(ChatID=ChatID, messages= messages, users= users, chatTime=datetime.utcnow())
     db.session.add(newchat)
     db.session.commit()
     return newchat
@@ -19,7 +19,7 @@ def get_chat_by_users(users):
     return Chat.query.get(users)
 
 
-def get_all_proposals():
+def get_all_chat():
     return Chat.query.all()
 
 """--------------------------------------"""

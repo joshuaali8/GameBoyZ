@@ -5,7 +5,7 @@ from App.database import db
 """--------------------------------------- """
 
 def create_resources(resourceID, resourceTag, resourceData, resourceName):
-    newresources= newresources(resourceID= resourceID, resourceTag= resourceTag, resourceData= resourceData, resourceName= resourceName)
+    newresources= Resource(resourceID= resourceID, resourceTag= resourceTag, resourceData= resourceData, resourceName= resourceName)
     db.session.add(newresources)
     db.session.commit()
     return newresources
@@ -26,7 +26,7 @@ def get_resources_by_resourceName(resourceName):
     return Resource.query.get(resourceName)
 
 
-def get_all_proposals():
+def get_all_resources():
     return Resource.query.all()
 
 """--------------------------------------"""

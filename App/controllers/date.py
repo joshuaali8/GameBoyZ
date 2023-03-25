@@ -5,7 +5,7 @@ from App.database import db
 """--------------------------------------- """
 
 def create_date(DateID, Day, Month, Year, Time):
-    newdate= Date(DateID= DateID, Day= Day , Month= Month, Year= Year, Time= Time)
+    newdate= Date(DateID= DateID, Day= Date , Month= Month, Year= Year, Time= Time)
     db.session.add(newdate)
     db.session.commit()
     return newdate
@@ -28,7 +28,7 @@ def get_date_by_Year(Year):
     return  Date.query.get(Year)
 
 
-def get_all_proposals():
+def get_all_date():
     return  Date.query.all()
 
 """--------------------------------------"""
@@ -36,7 +36,7 @@ def get_all_proposals():
 """ UPDATE FUNCTIONS """
 """--------------------------------------- """
 
-def update_date(DateID, Day, Month, Year, Time):
+def update_date(DateID= DateID, Day= Date , Month= Month, Year= Year, Time= Time):
     updateddates = get_date_byID(DateID)
     if updateddates:
         updateddates.Day = Day

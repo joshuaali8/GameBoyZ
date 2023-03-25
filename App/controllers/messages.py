@@ -3,7 +3,7 @@ from App.database import db
 from datetime import datetime
  
 def create_message(messageID, text, senderID, chatID, date=datetime.utcnow()):
-    newmessage= newmessage(text= text, senderID= senderID, chatID= chatID , date=datetime.utcnow())
+    newmessage= Message(text= text, senderID= senderID, chatID= chatID , date=datetime.utcnow())
     db.session.add(newmessage)
     db.session.commit()
     return newmessage
@@ -23,7 +23,7 @@ def get_messages_by_chatID(chatID):
     return Message.query.get(chatID)
 
 
-def get_all_proposals():
+def get_all_messages():
     return Message.query.all()
 
 """--------------------------------------"""
