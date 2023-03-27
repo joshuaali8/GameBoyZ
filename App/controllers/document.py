@@ -44,7 +44,7 @@ def update_documents(documentID, resourceID, queueID, lecturerID, CETLUserID, fa
         updateddocuments.facultyName = facultyName
         updateddocuments.programmeName = programmeName
         updateddocuments.courseCode = courseCode
-        updateddocuments.documentName = documentType
+        updateddocuments.documentName = documentName
         updateddocuments.document = document
         updateddocuments.State = State
         updateddocuments.Level = Level

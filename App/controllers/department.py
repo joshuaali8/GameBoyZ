@@ -47,9 +47,9 @@ def update_department(departmentID, departmentName, facultyID, programmeID):
 """--------------------------------------- """
 
 def delete_department(departmentID):
-    deledepartment = get_department_byID(departmentID)
-    if deledpartment:
-        db.session.delete(deledpartment)
+    deldepartment = get_department_byID(departmentID)
+    if deldepartment:
+        db.session.delete(deldpartment)
         return db.session.commit()
     return None
 
