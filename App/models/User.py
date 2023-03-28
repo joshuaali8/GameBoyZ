@@ -34,3 +34,12 @@ class User(db.Model):
         """Check hashed password."""
         return check_password_hash(self.password, password)
 
+    @staticmethod
+    def is_valid_id(id):
+        # Check if ID is 9-digit integer
+        return isinstance(id, int) and len(str(id)) == 9
+
+    @staticmethod
+    def is_email_unique(email):
+        # Check if email already exists in database
+        return not User.query.filter_by(email=email).first()
