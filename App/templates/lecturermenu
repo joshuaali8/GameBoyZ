@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block title %}My Page{% endblock %}
+
+{% block page %}My Page{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Resources</span>
+        <p>View our resources page.</p>
+      </div>
+      <div class="card-action">
+        <a href="{{ url_for('resources') }}" class="btn right">View</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Download Template</span>
+        <p>Download our template.</p>
+      </div>
+      <div class="card-action">
+        <a href="{{ url_for('download_template') }}" class="btn right">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Previously Submitted Forms</span>
+        <p>View your previously submitted forms.</p>
+      </div>
+      <div class="card-action">
+        <a href="{{ url_for('submitted_forms') }}" class="btn right">View</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Track Approval Progress</span>
+        <p>Track the progress of your form approvals.</p>
+      </div>
+      <div class="card-action">
+        <a href="{{ url_for('approval_progress') }}" class="btn right">Track</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l4">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Submit Form</span>
+        <p>Submit a new form.</p>
+      </div>
+      <div class="card-action">
+        <a href="{{ url_for('submit_form') }}" class="btn right">Submit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
