@@ -10,3 +10,7 @@ lecturer_views = Blueprint('lecturer_views', __name__, template_folder='../templ
 @lecturer_views.route('/home' , methods = ['GET'])
 def get_lecturermenu_page():
     return render_template('lecturermenu.html')
+
+@lecturer_views.route('/submit', methods = ['GET'])
+def get_submission_page():
+    return render_template('formSubmission.html')
