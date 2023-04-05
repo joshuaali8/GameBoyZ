@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}Upload Form{% endblock %}
+
+{% block page %}Upload Form{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <div class="card center-align">
+        <div class="card-content">
+          <span class="card-title">Upload Form</span>
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="name" type="text" class="validate">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="faculty" type="text" class="validate">
+              <label for="faculty">Faculty</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="course-code" type="text" class="validate">
+              <label for="course-code">Course Code</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="course-title" type="text" class="validate">
+              <label for="course-title">Course Title</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <select multiple>
+                <option value="" disabled selected>Add Resource Tags</option>
+                <option value="1">Tag 1</option>
+                <option value="2">Tag 2</option>
+                <option value="3">Tag 3</option>
+              </select>
+            </div>
+            <div class="file-field input-field col s12">
+              <div class="btn">
+                <span>File</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn right">Submit Form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
