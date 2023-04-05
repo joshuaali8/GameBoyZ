@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}Submitted Forms{% endblock %}
+
+{% block page %}Submitted Forms{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col s12">
+      <h4 class="center-align">Submitted Forms</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <table class="highlight centered">
+        <thead>
+          <tr>
+            <th>Course Title</th>
+            <th>Estimated Response Time</th>
+            <th>Assigned Ctel Personnel</th>
+            <th>Chat</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for form in forms %}
+            <tr>
+              <td>{{ form.course_title }}</td>
+              <td>{{ form.estimated_response_time }}</td>
+              <td>{{ form.assigned_ctel_personnel }}</td>
+              <td><a href="" class="btn waves-effect waves-light">Chat</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Previously Submitted Forms
+{% endblock %}
+
+{% block page %}
+  Previously Submitted Forms
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Previously Submitted Forms</span>
+          <table>
+            <thead>
+              <tr>
+                <th>Course Title</th>
+                <th>Approval Status</th>
+                <th>Changes Made by Lecturer</th>
+                <th>CETL Personnel Assigned</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for form in forms %}
+                <tr>
+                  <td>{{ form.course_title }}</td>
+                  <td>{{ form.approval_status }}</td>
+                  <td>{{ form.changes_made }}</td>
+                  <td>{{ form.cetl_personnel }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

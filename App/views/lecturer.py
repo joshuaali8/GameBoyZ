@@ -14,3 +14,11 @@ def get_lecturermenu_page():
 @lecturer_views.route('/submit', methods = ['GET'])
 def get_submission_page():
     return render_template('formSubmission.html')
+
+@lecturer_views.route('/viewPast',methods =['GET'])
+def get_past_forms():
+    return render_template('previouslySubmittedForms.html')
+
+@lecturer_views.route('/approvalStatus', methods= ['GET'])
+def get_approval_status():
+    return render_template('approvalProgress.html')
